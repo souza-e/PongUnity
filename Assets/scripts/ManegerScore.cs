@@ -127,7 +127,7 @@ public class ManegerScore : MonoBehaviour
 
 
 
-      // Reset the ball position or update the score as needed
+      // reseta a posição da bola ou atualiza a pontuação conforme necessário
     }
     else
     {
@@ -136,7 +136,7 @@ public class ManegerScore : MonoBehaviour
       player2Scored = false;
     }
 
-    Debug.Log("Ball Position: " + ballPosition.x + ", " + ballPosition.y);
+   // Debug.Log("Ball Position: " + ballPosition.x + ", " + ballPosition.y);
     //  Debug.Log("Screen Width: " + screenWidth + ", Screen Height: " + screenHeight);
   }
 
@@ -149,7 +149,7 @@ public class ManegerScore : MonoBehaviour
 
 
     if (gameOverPanel != null) gameOverPanel.SetActive(true);
-    OnResetPosition(false);
+     OnResetPosition(false);
 
 
     Debug.Log("Game Over!");

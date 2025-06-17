@@ -34,7 +34,7 @@ public class ball : MonoBehaviour
         if (rb.linearVelocity != Vector2.zero)
             rb.linearVelocity = rb.linearVelocity.normalized * speed; // Normaliza a velocidade e aplica o deltaTime para suavizar o movimento
 
-        Debug.Log("Velocidade da bola: " + rb.linearVelocity.magnitude);
+       // Debug.Log("Velocidade da bola: " + rb.linearVelocity.magnitude);
 
         // Verifica se a bola saiu da tela e sorteia uma nova direção
 

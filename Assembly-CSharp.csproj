@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Assets\scripts\paddles.cs" />
     <Compile Include="Assets\scripts\ManegerScore.cs" />
+    <Compile Include="Assets\scripts\PaddleDetect.cs" />
     <Compile Include="Assets\scripts\ball.cs" />
   </ItemGroup>
   <ItemGroup>
