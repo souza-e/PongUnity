@@ -1,3 +1,4 @@
+using System.Text;
 using TMPro; // Ensure you have the TextMeshPro package installed
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,6 +16,8 @@ public class ManegerScore : MonoBehaviour
   public TMP_Text txtPlay1, txtPlay2;
 
   [SerializeField] private GameObject gameOverPanel;
+
+
 
   public delegate void ResetPositionball(bool reset);
   public static event ResetPositionball OnResetPosition;
@@ -103,7 +106,7 @@ public class ManegerScore : MonoBehaviour
     float screenWidth = Camera.main.orthographicSize * Camera.main.aspect; //largora
 
     // Calculate the screen width based on the camera's orthographic size and aspect ratio
-    float screenHeight = Camera.main.orthographicSize * 2f; // altura
+    //float screenHeight = Camera.main.orthographicSize * 2f; // altura
 
 
     // Calculate the screen height based on the camera's orthographic size
@@ -136,20 +139,21 @@ public class ManegerScore : MonoBehaviour
       player2Scored = false;
     }
 
-   // Debug.Log("Ball Position: " + ballPosition.x + ", " + ballPosition.y);
+    // Debug.Log("Ball Position: " + ballPosition.x + ", " + ballPosition.y);
     //  Debug.Log("Screen Width: " + screenWidth + ", Screen Height: " + screenHeight);
   }
 
 
   void GameOver()
   {
+
     // This method is intended to handle the game over logic
     // Implement the logic to display a game over screen or reset the game
 
 
 
     if (gameOverPanel != null) gameOverPanel.SetActive(true);
-     OnResetPosition(false);
+    OnResetPosition(false);
 
 
     Debug.Log("Game Over!");
@@ -158,6 +162,22 @@ public class ManegerScore : MonoBehaviour
     // Optionally, reset scores or perform other actions
   }
 
+
+  public void ResetGame()
+  {
+    // This method is intended to reset the game state
+    // Implement the logic to reset scores, positions, and any other necessary variables
+
+    scorePlayer1 = 0;
+    scorePlayer2 = 0;
+    txtPlay1.text = "0";
+    txtPlay2.text = "0";
+
+    if (gameOverPanel != null) gameOverPanel.SetActive(false);
+
+    // Reset ball position or any other necessary game state
+    if (OnResetPosition != null) { OnResetPosition(true); }
+  }
 }
 
 

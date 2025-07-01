@@ -36,7 +36,7 @@ public class paddles : MonoBehaviour
 
 
         // rb1.position = new Vector2(rb1.position.x, Mathf.Clamp(rb1.position.y, YMin, YMax)); // Restringe o paddle dentro dos limites
-        float moveInput = Input.GetAxis("Vertical"); // Obtém a entrada vertical (teclas de seta ou WASD)
+        float moveInput = Input.GetAxis("VerticalJoystick1"); // Obtém a entrada vertical (teclas de seta ou WASD)
         Vector2 movement = new Vector2(0, moveInput) * speed * Time.deltaTime; // Calcula o movimento do paddle
         rb1.MovePosition(rb1.position = new Vector2(rb1.position.x, Mathf.Clamp(rb1.position.y, YMin + 2f, YMax - 2f)) + movement); // Move o paddle na direção calculada
 
@@ -53,7 +53,7 @@ public class paddles : MonoBehaviour
         float YMin = wallDown.position.y; // Obtém a posição mínima do paddle
 
 
-        float moveInput = Input.GetAxis("Vertical2"); // Obtém a entrada vertical para o segundo paddle
+        float moveInput = Input.GetAxis("VerticalJoystick2"); // Obtém a entrada vertical para o segundo paddle
         Vector2 movement = new Vector2(0, moveInput) * speed * Time.deltaTime; // Calcula o movimento do paddle
         rb2.MovePosition(rb2.position = new Vector2(rb2.position.x, Mathf.Clamp(rb2.position.y, YMin + 2f, YMax - 2f)) + movement); // Move o paddle na direção calculada
 
